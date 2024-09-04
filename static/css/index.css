@@ -1,0 +1,196 @@
+body {
+    background-color: rgb(230, 230, 250);
+    font-family: Arial, sans-serif;
+}
+
+#body-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+#header-bar {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 0;
+}
+
+#title-bar {
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#title {
+    color: rgba(0,0,0,0.6);
+}
+
+h2 {
+    font-weight: 100;
+    margin-top: 5px;
+}
+
+#button-bar {
+    width: 100%;
+    background-color: #6557d2;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#button-left-bar, #button-right-bar {
+    margin: 0 20px;
+}
+
+#start-form {
+    display: inline-block;
+}
+
+#input-container {
+    position: relative;
+    display: inline-block;
+}
+
+#start-input {
+    width: 200px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #5c51ad;
+    background-color: #5c51ad;
+    color: #ffffff;
+    text-align: center;
+    outline: none;
+}
+
+#start-input::placeholder {
+    color: #cccccc;
+}
+
+#start-input-error {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(212, 82, 115);
+    color: aliceblue;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.button {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #7d6fe9;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #7367d1;
+}
+
+#canvas-box {
+    width: 100vw;
+    height: calc(100vh - 100px);  /* Adjust based on your header height */
+    overflow: hidden;
+}
+
+#graph {
+    width: 100%;
+    height: 100%;
+}
+
+#info-box {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 20%;
+    min-width: 250px;
+    background-color: rgba(173, 173, 199, 0.6);
+    border-radius: 0 0 20px 0;
+    padding: 20px;
+    display: none;
+}
+
+#info-box.info-show {
+    display: block;
+}
+
+#info-box.info-hide {
+    display: none;
+}
+
+#instructions-container {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+}
+
+#instructions-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#instructions-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.text-highlight {
+    font-weight: bold;
+    color: #6557d2;
+}
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font-size: 12px;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.link-text {
+    font-size: 12px;
+    fill: #555;
+    pointer-events: none;
+    dominant-baseline: text-after-edge;
+}
+
+.explore-button {
+    cursor: pointer;
+}
+
+.explore-button:hover circle {
+    fill: #f0f0f0;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.about-button, .expand-button {
+    cursor: pointer;
+}
+
+.about-button:hover circle, .expand-button:hover circle {
+    fill: #f0f0f0;
+}

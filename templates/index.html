@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGraph with Gemini</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div id="body-container">
+        <div id="header-bar">
+            <div id="title-bar">
+                <h1>Wiki<span id="title">Graph</span> with Gemini</h1>
+                <h2>An interactive graph for generating a map between topics using Gemini AI.</h2>
+            </div>
+        </div>
+        <div id="button-bar">
+            <div id="button-left-bar">
+                <form id="start-form">
+                    <div id="input-container">
+                        <input type="text" id="start-input" placeholder="Enter a starting topic"/>
+                        <span id="start-input-error">Topic not found</span>
+                    </div>
+                    <button class="button" id="start-button" form="start-form">Start</button>
+                </form>
+                <button class="button" id="info-button">Show Info</button>
+            </div>
+            <div id="button-right-bar">
+                <button class="button" id="help-button">Help</button>
+            </div>
+        </div>
+        <div class="info-hide" id="info-box">
+            <h3 id="info-title"></h3>
+            <p id="info-text"></p>
+        </div>
+        <div id="canvas-box">
+            <svg id="graph"></svg>
+        </div>
+        <div id="about-popup" class="popup" style="display: none;">
+            <h3 id="about-title"></h3>
+            <p id="about-description"></p>
+        </div>
+        <div id="instructions-container" style="display: none;">
+            <h3 id="instructions-header">Instructions</h3>
+            <ul id="instructions-list">
+                <li>To start, enter a word into the input box at the top left, then click on the <span class="text-highlight">Start</span> button. To add nodes to your graph, click on the "Explore" button on a node.</li>
+                <li>Click and drag a node to move it around the graph.</li>
+                <li>Click on the reset button to start over with a new graph. The <span class="text-highlight">Show Info</span> button toggles the info box on the left.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+</body>
+</html>
